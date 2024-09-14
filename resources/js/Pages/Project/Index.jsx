@@ -39,7 +39,9 @@ export default function Index({auth, projects}) {
                       <img src={project.image_path} style={{width: 60}} alt=""/>
                     </td>
                     <td className="px-3 py-2">{project.name}</td>
-                    <td className="px-3 py-2">{project.status}</td>
+                    <td className="px-3 py-2">
+                      {project.status}
+                    </td>
                     <td className="px-3 py-2 text-nowrap">{project.created_at}</td>
                     <td className="px-3 py-2 text-nowrap">{project.due_date}</td>
                     <td className="px-3 py-2">{project.createdBy.name}</td>
