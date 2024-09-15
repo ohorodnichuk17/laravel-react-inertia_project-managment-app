@@ -60,7 +60,7 @@ export default function Index({auth, projects, queryParams = null}) {
                     className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
                   <tr className="text-nowrap">
                     <th onClick={e => sortChanged('id')}>
-                      <div className="px-3 py-3 flex items-center justify-between gap-1">
+                      <div className="px-3 py-3 flex items-center justify-between gap-1 cursor-pointer">
                         ID
                         <div>
                           <ChevronUpIcon className="w-4"/>
@@ -70,7 +70,7 @@ export default function Index({auth, projects, queryParams = null}) {
                     </th>
                     <th className="px-3 py-3">Image</th>
                     <th onClick={e => sortChanged('name')}>
-                      <div className="px-3 py-3 flex items-center justify-between gap-1">
+                      <div className="px-3 py-3 flex items-center justify-between gap-1 cursor-pointer">
                         Name
                         <div>
                           <ChevronUpIcon className="w-4"/>
@@ -79,7 +79,7 @@ export default function Index({auth, projects, queryParams = null}) {
                       </div>
                     </th>
                     <th onClick={e => sortChanged('status')}>
-                      <div className="px-3 py-3 flex items-center justify-between gap-1">
+                      <div className="px-3 py-3 flex items-center justify-between gap-1 cursor-pointer">
                         Status
                         <div>
                           <ChevronUpIcon className="w-4"/>
@@ -88,7 +88,7 @@ export default function Index({auth, projects, queryParams = null}) {
                       </div>
                     </th>
                     <th onClick={e => sortChanged('created_at')}>
-                      <div className="px-3 py-3 flex items-center justify-between gap-1">
+                      <div className="px-3 py-3 flex items-center justify-between gap-1 cursor-pointer">
                         Create Date
                         <div>
                           <ChevronUpIcon className="w-4"/>
@@ -97,7 +97,7 @@ export default function Index({auth, projects, queryParams = null}) {
                       </div>
                     </th>
                     <th onClick={e => sortChanged('due_date')}>
-                      <div className="px-3 py-3 flex items-center justify-between gap-1">
+                      <div className="px-3 py-3 flex items-center justify-between gap-1 cursor-pointer">
                         Due Date
                         <div>
                           <ChevronUpIcon className="w-4"/>
