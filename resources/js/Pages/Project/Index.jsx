@@ -40,7 +40,21 @@ export default function Index({auth, projects, queryParams = null}) {
             <div className="p-6 text-gray-900 dark:text-gray-100">
 
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                <thead
+                  className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                <tr className="text-nowrap">
+                  <th className="px-3 py-3">ID</th>
+                  <th className="px-3 py-3">Image</th>
+                  <th className="px-3 py-3">Name</th>
+                  <th className="px-3 py-3">Status</th>
+                  <th className="px-3 py-3">Create Date</th>
+                  <th className="px-3 py-3">Due Date</th>
+                  <th className="px-3 py-3">Created By</th>
+                  <th className="px-3 py-3">Actions</th>
+                </tr>
+                </thead>
+                <thead
+                  className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
                 <tr className="text-nowrap">
                   <th className="px-3 py-3"></th>
                   <th className="px-3 py-3"></th>
@@ -111,7 +125,7 @@ export default function Index({auth, projects, queryParams = null}) {
                 ))}
                 </tbody>
               </table>
-              <Pagination links={projects.meta.links} />
+              <Pagination links={projects.meta.links}/>
             </div>
           </div>
         </div>
