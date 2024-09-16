@@ -1,14 +1,12 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import {Head, Link, router} from "@inertiajs/react";
 import Pagination from "@/Components/Pagination.jsx";
-import {PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP} from "@/constants.jsx";
+import {TASK_STATUS_CLASS_MAP, TASK_STATUS_TEXT_MAP} from "@/constants.jsx";
 import TextInput from "@/Components/TextInput.jsx";
 import SelectInput from "@/Components/SelectInput.jsx";
-import {ChevronDownIcon, ChevronUpIcon} from "@heroicons/react/16/solid/index.js";
 import TableHeading from "@/Components/TableHeading.jsx";
 
-
-export default function Index({auth, projects, queryParams = null}) {
+export default function Index({auth, projects: tasks, queryParams = null}) {
   queryParams = queryParams || {};
 
   const searchFieldChanged = (name, value) => {
@@ -46,12 +44,12 @@ export default function Index({auth, projects, queryParams = null}) {
       user={auth.user}
       header={<h2 className="font-semibold text-xl text-gray-800
       dark:text-gray-200 leading-tight">
-        Projects
+        Tasks
       </h2>
       }
     >
 
-      <Head title="Projects"/>
+      <Head title="Tasks"/>
 
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -117,7 +115,7 @@ export default function Index({auth, projects, queryParams = null}) {
                       <TextInput
                         className="w-full"
                         defaultValue={queryParams.name}
-                        placeholder="Project Name"
+                        placeholder="Task Name"
                         onBlur={e => searchFieldChanged('name', e.target.value)}
                         onKeyPress={e => onKeyPress('name', e)}
                       />
@@ -141,7 +139,7 @@ export default function Index({auth, projects, queryParams = null}) {
                   </tr>
                   </thead>
                   <tbody>
-                  {projects.data.map(project => (
+                  {tasks.data.map(project => (
                     <tr
                       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                       key={project.id}
@@ -154,9 +152,9 @@ export default function Index({auth, projects, queryParams = null}) {
                       <td className="px-3 py-2">
                       <span className={
                         "px-2 py-1 rounded text-white " +
-                        PROJECT_STATUS_CLASS_MAP[project.status]
+                        TASK_STATUS_CLASS_MAP[project.status]
                       }>
-                        {PROJECT_STATUS_TEXT_MAP[project.status]}
+                        {TASK_STATUS_TEXT_MAP[project.status]}
                       </span>
                       </td>
                       <td className="px-3 py-2 text-nowrap">{project.created_at}</td>
@@ -182,7 +180,7 @@ export default function Index({auth, projects, queryParams = null}) {
                 </table>
               </div>
 
-              <Pagination links={projects.meta.links}/>
+              <Pagination links={tasks.meta.links}/>
             </div>
           </div>
         </div>
