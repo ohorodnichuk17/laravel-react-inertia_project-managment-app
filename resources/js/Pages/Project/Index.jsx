@@ -4,7 +4,6 @@ import Pagination from "@/Components/Pagination.jsx";
 import {PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP} from "@/constants.jsx";
 import TextInput from "@/Components/TextInput.jsx";
 import SelectInput from "@/Components/SelectInput.jsx";
-import {ChevronDownIcon, ChevronUpIcon} from "@heroicons/react/16/solid/index.js";
 import TableHeading from "@/Components/TableHeading.jsx";
 
 
