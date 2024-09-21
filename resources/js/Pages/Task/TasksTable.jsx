@@ -54,6 +54,7 @@ export default function TasksTable({tasks, queryParams = null}) {
               ID
             </TableHeading>
             <th className="px-3 py-3">Image</th>
+            <th className="px-3 py-3">Project Name</th>
             <TableHeading
               name="name"
               sort_field={queryParams.sort_field}
@@ -95,6 +96,7 @@ export default function TasksTable({tasks, queryParams = null}) {
           <tr className="text-nowrap">
             <th className="px-3 py-3"></th>
             <th className="px-3 py-3"></th>
+            <th className="px-3 py-3"></th>
             <th className="px-3 py-3">
               <TextInput
                 className="w-full"
@@ -132,6 +134,7 @@ export default function TasksTable({tasks, queryParams = null}) {
               <td className="px-3 py-2">
                 <img src={task.image_path} style={{width: 60}} alt=""/>
               </td>
+              <td className="px-3 py-2">{task.project.name}</td>
               <td className="px-3 py-2">{task.name}</td>
               <td className="px-3 py-2">
                       <span className={
