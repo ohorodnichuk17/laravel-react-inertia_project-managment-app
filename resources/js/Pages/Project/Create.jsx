@@ -42,7 +42,6 @@ export default function Create({auth }) {
             <form
               className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg"
               onSubmit={onSubmit}
-              enctype="multipart/form-data"
             >
               <div>
                 <InputLabel
@@ -53,9 +52,8 @@ export default function Create({auth }) {
                   id="project_image_path"
                   type="file"
                   name="image"
-                  value={data.image}
                   className="mt-1 block w-full"
-                  onChange={e => setData("image", e.target.value)}
+                  onChange={e => setData("image", e.target.files[0])}
                 />
                 <InputError
                   message={errors.image}
