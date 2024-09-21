@@ -43,10 +43,19 @@ export default function Index({auth, projects, queryParams = null}) {
   return (
     <AuthenticatedLayout
       user={auth.user}
-      header={<h2 className="font-semibold text-xl text-gray-800
+      header={
+        <div className="flex justify-between items-center">
+          <h2 className="font-semibold text-xl text-gray-800
       dark:text-gray-200 leading-tight">
-        Projects
-      </h2>
+            Projects
+          </h2>
+          <Link href={route("project.create")} className="bg-emerald-500 py-1 px-3
+          text-white rounded shadow transition-all
+          hover:bg-emerald-600"
+          >
+            Add new
+          </Link>
+        </div>
       }
     >
 
@@ -57,7 +66,7 @@ export default function Index({auth, projects, queryParams = null}) {
           <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
 
-              <div className="overflow-auto">
+            <div className="overflow-auto">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead
                     className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
