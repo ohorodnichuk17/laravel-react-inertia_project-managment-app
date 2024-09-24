@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Http\Resources\UserResource;
-use App\Models\Project;
+use App\Http\Resources\UserCrudResource;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -34,7 +31,7 @@ class UserController extends Controller
             ->onEachSide(1);
 
         return inertia("User/Index", [
-            "users" => UserResource::collection($users),
+            "users" => UserCrudResource::collection($users),
             'queryParams' => request()->query() ?: null,
             'success' => session('success'),
         ]);
