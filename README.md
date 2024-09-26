@@ -1,4 +1,4 @@
-#Laravel + React Full Stack App with Inertia
+# Laravel + React Full Stack App with Inertia
 Project management application using.
 
 Features
